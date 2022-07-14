@@ -15,7 +15,7 @@ public class QueryProcessor {
            return "MyTeam";
         } else { // TODO extend the programm here
 
-            String line = "564 33 654 8321 15";
+            String line = "270, 56, 474, 37";
             //We split the line at each space, so we can separate each number
             String[] array = line.split("\\s+");
 
