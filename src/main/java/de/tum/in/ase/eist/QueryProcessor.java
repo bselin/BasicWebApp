@@ -14,7 +14,29 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "MyTeam";
         } else { // TODO extend the programm here
-            return "";
+
+            String line = "564 33 654 8321 15";
+            //We split the line at each space, so we can separate each number
+            String[] array = line.split("\\s+");
+
+            //Integer.MIN_VALUE will give you the smallest number an integer can have,
+            //and you can use this to check against.
+            int largestInt = Integer.MIN_VALUE;
+
+            //We iterate over each of the separated numbers (they are still Strings)
+            for (String numberAsString : array) {
+
+                //Integer.parseInt will parse a number to integer from a String
+                //You will get a NumberFormatException if the String can not be parsed
+                int number = Integer.parseInt(numberAsString);
+
+                //Check if the parsed number is greater than the largestInt variable
+                //If it is, set the largestInt variable to the number parsed
+                if (number > largestInt) {
+                    largestInt = number;
+                }
+            }
+            return Integer.toString(largestInt);
         }
 
     }
